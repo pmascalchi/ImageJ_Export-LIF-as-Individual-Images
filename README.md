@@ -1,2 +1,2 @@
 # exportLIFasSingleImages
-ImageJ / Fiji macro to automatically export images within a Leica LIF file as single images
+ImageJ / Fiji macro to automatically export Leica LIF file as individual images
