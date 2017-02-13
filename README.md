@@ -10,4 +10,5 @@ Features:
 - Generate numbers in front of the image names
 - Mosaic / Tile scans : do not extract single tiles but only the merged image
 
+You may adapt this macro to work with other complex formats...
 Please report any issue you encounter and I'll update the macro.
