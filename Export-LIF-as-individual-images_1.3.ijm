@@ -13,7 +13,7 @@ run("Bio-Formats Macro Extensions");
 
 // Dialog window for parameters choice ----------------
 yesno = newArray("no", "yes");
-ftypes = newArray("tif", "jpg", "ics (better compatibility with Imaris)");
+ftypes = newArray("tif", "jpg", "ics");
 Dialog.create("Settings for all LIF files");
 Dialog.addChoice("Batch process (multiple .LIF files in same folder)", yesno);
 Dialog.addMessage("");
@@ -82,7 +82,7 @@ for (i=0; i<Mylist.length; i++) {
 			
 			if (ftyp=="tif") saveAs("Tiff", outdir + t + ".tif");
 			if (ftyp=="jpg") saveAs("Jpeg", outdir + t + ".jpg");
-			if (ftyp=="ics (better compatibility with Imaris)") run("Bio-Formats Exporter", "save=["+ outdir + t + ".ids]");
+			if (ftyp=="ics") run("Bio-Formats Exporter", "save=["+ outdir + t + ".ids]");
 			
 			run("Close All");
 		}
