@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 ### **Export LIF as Individual Images**
 
-ImageJ / Fiji macro to automatically export Leica LIF file as individual images
+ImageJ / Fiji macro to automatically export Leica LIF file or similar formats as individual images
 
 Features:
 - Process a single .lif file or all .lif files in one folder (batch mode)
