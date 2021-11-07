@@ -123,7 +123,7 @@ for (i=0; i<Mylist.length; i++) {
 			if (lengthOf(t) > lengthOf(Mylist[i])) t = replace(t, Mylist[i], "");
 			t = substring(t, 3, lengthOf(t));
 			t = replace(t,"/","_");
-			t = replace(t," - ","");
+			t = replace(t,"_ - ",""); // MIPs won't have a "_" prefix starting in v1.7
 			t = replace(t, " #", "series");
 			if (pyramidal) t = t + "_" + tmpI;
 			if (prefix == "yes") t = IJ.pad(f, 3) +"_"+ t;
