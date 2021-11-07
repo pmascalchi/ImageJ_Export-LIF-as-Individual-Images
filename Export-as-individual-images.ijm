@@ -16,6 +16,8 @@
 // v1.5: - For pyramidal images, compares pixel sizes to detect change in field of view
 // v1.6: - Adding a file extension filter for the input + fixed bug with output image naming
 //		 - Added option to save all in the same output folder
+// v1.7: - MIPs will have a suffix "_MIP" for clarity
+//       - MIPs are saved in their own folder "converted_MIPs" (can run this macro with/without MIP)
 
 requires("1.48a");
 run("Bio-Formats Macro Extensions");
@@ -64,7 +66,9 @@ count = 0;
 for (i=0; i<Mylist.length; i++) {
 	// Setting output folder
 	outdir = Mypath + "converted" + File.separator;
+	if (maxproj == "yes") outdir = Mypath + "converted_MIPs" + File.separator;
 	if (indivfolder == "yes") outdir = Mypath + replace(Mylist[i], ".", "_") + File.separator;		// TODO
+	if ((indivfolder == "yes") && (maxproj == "yes") == true ) outdir =  Mypath + replace(Mylist[i], ".", "_") + "_MIPs" + File.separator;
 	if (!File.exists(outdir)) {
 		File.makeDirectory(outdir);
 	}
@@ -123,6 +127,7 @@ for (i=0; i<Mylist.length; i++) {
 			t = replace(t, " #", "series");
 			if (pyramidal) t = t + "_" + tmpI;
 			if (prefix == "yes") t = IJ.pad(f, 3) +"_"+ t;
+			if (maxproj=="yes") t = t + "_MIP";
 			
 			// Only for multipositions filtering
 			if (indexOf(t, "Pos0") > -1) t = replace(t, "Mark_and_Find_", "");
