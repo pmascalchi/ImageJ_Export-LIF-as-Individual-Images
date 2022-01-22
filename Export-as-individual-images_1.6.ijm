@@ -109,7 +109,7 @@ for (i=0; i<Mylist.length; i++) {
 		
 		if (proceed==1) {
 			print("Processing: "+sname);
-			run("Bio-Formats Importer", "open=[" + Mypath + Mylist[i] +"] autoscale color_mode=Composite view=Hyperstack stack_order=Default series_" + f);
+			run("Bio-Formats Importer", "open=[" + Mypath + Mylist[i] +"] autoscale color_mode=Composite view=Hyperstack stack_order=XYCZT series_" + f);
 			getDimensions(wi, he, ch, sl, fr);
 			if (maxproj=="yes" && sl>1) run("Z Project...", "projection=[Max Intensity]");
 			if (merge=="yes" && ch>1) run("Stack to RGB");
