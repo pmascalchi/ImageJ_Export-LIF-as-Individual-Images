@@ -4,6 +4,7 @@
 // Location: Cancer Research Institute, University of Cambridge, UK
 // New Location: DRVision Technologies LLC, Bordeaux, France
 // Contact: p.mascalchi@gmail.com
+// Other contributors for new versions are listed on GitHub
 // -------------------------------------------------------------------
 
 /*
